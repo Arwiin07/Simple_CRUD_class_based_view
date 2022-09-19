@@ -1,6 +1,19 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<title>Detail</title>
+<head>
+    <br>
+    <h1>Detail View</h1>
+</head>
+<body>
 <li>{{object.first_name}}</li>
     <li>{{object.birth_date}}</li>
     <li>{{object.last_name}}</li>
     <li>{{object.gender}}</li>
     <li>{{object.hire_date}}</li>
-    <a href="/list">Back TO list</a>
+<br>
+    <a href="/list">Back To List</a>
+
+</body>
+{%endblock%}

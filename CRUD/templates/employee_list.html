@@ -1,3 +1,9 @@
+{%extends 'base.html'%}
+{% block content%}
+<head>
+    <h1>List Of Employees</h1>
+    </head>
+<body>
 <ul>
     {%for object in object_list%}
     <a href="/details/{{object.emp_np}}" <li>{{object.first_name}} {{object.last_name}}</a> | <a href="/update/{{object.emp_np}}"> Edit</a> | <a href="/delete/{{object.emp_np}}"> Delete</a></li>
@@ -6,3 +12,5 @@
     <li>No records found!</li>
     {%endfor%}
 </ul>
+</body>
+{%endblock%}

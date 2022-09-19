@@ -1,5 +1,67 @@
+
+
+{%extends 'base.html'%}
+{%block content%}
+{% load widget_tweaks %}
+
+<br>
+<br>
+<style>
+    .input_field{
+    margin-top:5px;
+    }
+    #main{
+       width: 500px;
+       margin: auto;
+    }
+</style>
+
+<div id="main">
 <form method="POST" encrypt="multipart/form-data">
     {%csrf_token%}
-    {{form.as_p}}
-    <input type="submit" value="Submit">
+    <div class="input_field" >
+        <label>Employee_Number:</label>
+
+          <!--  // first_name is the name by which first name is created in django forms-->
+        {% render_field form.emp_np class="form-control" %}
+        </div>
+    <div class="input_field">
+
+          <label >Birth_Date:</label>
+                   {% render_field form.birth_date class="form-control" %}
+
+       </div>
+    <div class="input_field">
+        <label >First Name:</label>
+                   {% render_field form.first_name class="form-control" %}
+
+    </div>
+    <div class="input_field">
+        <label >Last Name:</label>
+                   {% render_field form.last_name class="form-control" %}
+
+    </div>
+    <div class="input_field">
+        <label >Gender:</label>
+                   {% render_field form.gender class="form-control" %}
+
+    </div>
+
+    <div class="input_field">
+        <label >Hire Date:</label>
+                   {% render_field form.hire_date class="form-control" %}
+
+    </div>
+    <br>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+<!--    <input type="submit" value="Submit">-->
 </form>
+
+    <br>
+    <hr>
+
+<a href="/list">See All Lists Of Employees!</a>
+{%endblock%}
+    </div>
